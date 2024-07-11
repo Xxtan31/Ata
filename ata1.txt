@@ -1,6 +1,6 @@
 
 local Developer_Player = "3139357543"
-local test_ModeAhax = true;
+local test_ModeAhax = false;
 
 local KeySystem_Domain = "https://pandadevelopment.net"
 
