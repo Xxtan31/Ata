@@ -5395,8 +5395,8 @@ task.spawn(function()
 			warn("Script not found: " .. scriptName)
 		end
 	end
-	
 
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/ata8.txt", true))()
 	_scripts = read_scripts()
 	
 	local function execute_(scriptName)
