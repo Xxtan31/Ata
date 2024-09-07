@@ -22,7 +22,12 @@ function MyHubLib:CreateWindow(title)
     TitleBar.Font = Enum.Font.ArimoBold
     TitleBar.Text = title
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TitleBar.TextSize = 24
+    TitleBar.TextSize = 8
+    
+    local uic = Instance.new("UICorner")
+    uiCorner.Name = "uic"
+    uiCorner.Parent = MainFrame
+    uiCorner.CornerRadius = UDim.new(0, 13)
 
     self.MainFrame = MainFrame
     self.Tabs = {}
