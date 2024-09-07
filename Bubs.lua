@@ -81,7 +81,7 @@ function AtaHubLib:CreateWindow(title)
     
 Button.MouseButton1Click:Connect(function()
     warn("dont copleted")
-end
+end)
 local button1Active = false
 Button1.MouseButton1Click:Connect(function()
     if button1Active then
@@ -90,7 +90,8 @@ Button1.MouseButton1Click:Connect(function()
  else
     button1Active = false
     backtween:Play()
-end
+  end
+end)
 
     local function ButtonMouseEnter()
         Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
