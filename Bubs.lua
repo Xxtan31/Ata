@@ -3,6 +3,16 @@ AtaHubLib.__index = AtaHubLib
 
 local TweenService = game:GetService("TweenService")
 
+local function one()
+    local mainFrameTween = createTween(mainFrame, 1, UDim2.new(0, 350, 0, 300))
+    mainFrameTween:Play()
+end
+
+local function two()
+    local mainFramebackTween = createTween(mainFrame, 1, UDim2.new(0, 300, 0, 43))
+    mainFramebackTween:Play()
+end
+
 local function createFrame(name, parent, pos, size, visible, trans)
     local frame = Instance.new("Frame")
     frame.Name = name
@@ -171,16 +181,7 @@ Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 local uic = createuiCorner("uic", mainFrame, UDim.new(0, 13))
 local uic1 = createuiCorner("uic1", Button, UDim.new(0, 13))
 local uic2 = createuiCorner("uic2", Button1, UDim.new(0, 13))
-    
-local function one()
-    local mainFrameTween = createTween(mainFrame, 1, UDim2.new(0, 350, 0, 300))
-    mainFrameTween:Play()
-end
 
-local function two()
-    local mainFramebackTween = createTween(mainFrame, 1, UDim2.new(0, 300, 0, 43))
-    mainFramebackTween:Play()
-end
     
 
 local button1Active = false
