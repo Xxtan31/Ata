@@ -25,7 +25,6 @@ function MyHubLib:CreateWindow(title)
     TitleBar.TextSize = 8
     
     local uic = Instance.new("UICorner")
-    uic.Name = "uic"
     uic.Parent = MainFrame
     uic.CornerRadius = UDim.new(0, 13)
 
