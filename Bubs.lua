@@ -103,7 +103,15 @@ function AtaHubLib:CreateNotification(title, text, duration)
     Notification.TextWrapped = true
 
     local tween = TweenService:Create(Notification, TweenInfo.new(0.5), {Position = UDim2.new(0.5, -150, 1, -210)})
-    local tweenOut = TweenService:Create(Notification, TweenInfo.new(0.5), {Position = UDim2.new(0.5, -150, 1, -110)})
+local tweenOut = TweenService:Create(Notification, TweenInfo.new(0.5), {Position = UDim2.new(0.5, -150, 1, -110)})
+
+tween.Completed:Connect(function()
+    print("Tween completed!")
+end)
+
+tweenOut.Completed:Connect(function()
+    print("Tween out completed!")
+end)
     
     tween:Play()
     spawn(function()
