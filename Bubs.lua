@@ -19,7 +19,7 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.Parent = MainFrame
     TitleBar.Size = UDim2.new(0, 120, 0, 20)
     TitleBar.Position = UDim2.new(0, 5, 0, 10)
-    TitleBar.Font = Enum.Font.ArimoBold
+    TitleBar.Font = Enum.Font.Arimo
     TitleBar.Text = title
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
     TitleBar.TextSize = 8
@@ -51,7 +51,7 @@ function AtaHubLib:CreateTab(name)
     TabFrame.Position = UDim2.new(0, 0, 0, 45)
     TabFrame.Visible = false
 
-    self.Tabs[name] = TabFrame
+    self.TTabs[name] = TabFrame
     TabButton.MouseButton1Click:Connect(function()
         for _, tab in pairs(self.Tabs) do
             tab.Visible = false
