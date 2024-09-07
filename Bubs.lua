@@ -1,5 +1,5 @@
-local MyHubLib = {}
-MyHubLib.__index = MyHubLib
+local AtaHubLib = {}
+AtaHubLib.__index = AtaHubLib
 
 local TweenService = game:GetService("TweenService")
 
