@@ -21,7 +21,6 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.Font = Enum.Font.Arimo
     TitleBar.Text = title
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TitleBar.TextSize = 8
     
     local uic = Instance.new("UICorner")
     uic.Parent = MainFrame
