@@ -75,6 +75,22 @@ function AtaHubLib:CreateWindow(title)
     local uic2 = Instance.new("UICorner")
     uic2.Parent = Button1
     uic2.CornerRadius = UDim.new(0, 13)
+    
+    local tween = TweenService:Create(MainFrame, TweenInfo.new(0.5), {Size = UDim2.new(0, 300, 0, 300)})
+    local backtween = TweenService:Create(MainFrame, TweenInfo.new(0.5), {Size = UDim2.new(0, 300, 0, 33)})
+    
+Button.MouseButton1Click:Connect(function()
+    warn("dont copleted")
+end
+local button1Active = false
+Button1.MouseButton1Click:Connect(function()
+    if button1Active then
+    button1Active = true
+    tween:Play()
+ else
+    button1Active = false
+    backtween:Play()
+end
 
     local function ButtonMouseEnter()
         Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
