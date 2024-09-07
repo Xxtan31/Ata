@@ -79,28 +79,25 @@ function AtaHubLib:CreateWindow(title)
     local function ButtonMouseEnter()
         Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
     end
-
     local function ButtonMouseLeave()
-        Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        Button.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     end
-
-    Button.MouseEnter:Connect(ButtonMouseEnter)
-    Button.MouseLeave:Connect(ButtonMouseLeave)
-
     local function Button1MouseEnter()
         Button1.BackgroundColor3 = Color3.fromRGB(51, 255, 255)
     end
 
     local function Button1MouseLeave()
-        Button1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     end
-
+    
+    Button.MouseEnter:Connect(ButtonMouseEnter)
+    Button.MouseLeave:Connect(ButtonMouseLeave)
     Button1.MouseEnter:Connect(Button1MouseEnter)
     Button1.MouseLeave:Connect(Button1MouseLeave)
 
     game:GetService("RunService").RenderStepped:Connect(function()
-        Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 46, 0, 0)
-        Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 91, 0, 0)
+        Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 33, 0, 0)
+        Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 67, 0, 0)
     end)
 
     self.MainFrame = MainFrame
