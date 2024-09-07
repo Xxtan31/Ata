@@ -214,11 +214,11 @@ end)
     Button1.MouseLeave:Connect(Button1MouseLeave)
 
     game:GetService("RunService").RenderStepped:Connect(function()
-        Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 33, 0, 0)
-        Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 67, 0, 0)
+        Button.Position = UDim2.new(0, mainFrame.Size.X.Offset - 33, 0, 0)
+        Button1.Position = UDim2.new(0, mainFrame.Size.X.Offset - 67, 0, 0)
     end)
 
-    self.MainFrame = mainFrame
+    self.mainFrame = mainFrame
     self.Tabs = {}
 
     return self
