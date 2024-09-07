@@ -16,11 +16,13 @@ function AtaHubLib:CreateWindow(title)
 
     local TitleBar = Instance.new("TextLabel")
     TitleBar.Parent = MainFrame
-    TitleBar.Size = UDim2.new(0, 120, 0, 20)
+    TitleBar.Size = UDim2.new(0, 300, 0, 20)
     TitleBar.Position = UDim2.new(0, 5, 0, 10)
     TitleBar.Font = Enum.Font.ArimoBold
     TitleBar.Text = title
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TitleBar.TextSize = 12
+    TitleBar.BackgroundTransparency = 1
     
     local uic = Instance.new("UICorner")
     uic.Parent = MainFrame
