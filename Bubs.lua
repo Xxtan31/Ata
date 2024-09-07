@@ -23,7 +23,7 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
     TitleBar.TextSize = 13
     TitleBar.BackgroundTransparency = 1
-    TitleBar.TextXAlignment = Enum.TextXAlignment.Center
+    TitleBar.TextXAlignment = Enum.TextXAlignment.Left
     TitleBar.TextWrapped = true
     
     local uic = Instance.new("UICorner")
