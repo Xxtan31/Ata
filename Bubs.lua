@@ -13,7 +13,6 @@ function AtaHubLib:CreateWindow(title)
     MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     MainFrame.Position = UDim2.new(0, 202, 0, -10)
     MainFrame.Size = UDim2.new(0, 300, 0, 43)
-    MainFrame.ClipsDescendants = true
 
     local TitleBar = Instance.new("TextLabel")
     TitleBar.Parent = MainFrame
