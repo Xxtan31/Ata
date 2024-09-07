@@ -3,20 +3,148 @@ AtaHubLib.__index = AtaHubLib
 
 local TweenService = game:GetService("TweenService")
 
+local function createFrame(name, parent, pos, size, visible, trans)
+    local frame = Instance.new("Frame")
+    frame.Name = name
+    frame.Size = size
+    frame.Position = pos
+    frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    frame.BackgroundTransparency = trans
+    frame.Visible = visible
+    frame.Parent = parent
+    return frame
+end
+
+local function createScrollingFrame(name, parent, pos, size, visible, trans, canvasSize, scrollBarThickness)
+    local scrollingFrame = Instance.new("ScrollingFrame")
+    scrollingFrame.Name = name
+    scrollingFrame.Size = size
+    scrollingFrame.Position = pos
+    scrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    scrollingFrame.BackgroundTransparency = trans
+    scrollingFrame.Visible = visible
+    scrollingFrame.Parent = parent
+    
+    scrollingFrame.CanvasSize = canvasSize or UDim2.new(0, 0, 2, 0)
+    scrollingFrame.ScrollBarThickness = scrollBarThickness or 5
+    scrollingFrame.ScrollBarImageColor3 = Color3.new(1, 1, 1)
+
+    return scrollingFrame
+end
+
+local function createImageLabel(name, parent, pos, size, image, visible, transparency, color)
+    local imageLabel = Instance.new("ImageLabel")
+    imageLabel.Name = name
+    imageLabel.Size = size
+    imageLabel.Position = pos
+    imageLabel.Image = image or ""
+    imageLabel.Visible = visible
+    imageLabel.BackgroundTransparency = transparency
+    imageLabel.ImageColor3 = color or Color3.new(1, 1, 1)
+    imageLabel.Parent = parent
+    return imageLabel
+end
+
+local function createText(name, parent, pos, size, text, vis, rot)
+    local label = Instance.new("TextLabel")
+    label.Name = name
+    label.Size = size
+    label.Position = pos
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.Visible = vis
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)    
+    label.TextScaled = true
+    label.Font = Enum.Font.PatrickHand
+    label.Parent = parent
+    label.Rotation = rot
+    return label
+end
+
+local function createButton(name, parent, pos, size, visible, text, trans)
+    local button = Instance.new("TextButton")
+    button.Name = name
+    button.Size = size
+    button.Position = pos
+    button.Text = text
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    
+    button.BackgroundTransparency = trans
+    button.Parent = parent
+    button.Visible = visible
+    return button
+end
+
+local function createTextBox(name, parent, pos, size, visible, text, trans)
+    local textBox = Instance.new("TextBox")
+    textBox.Name = name
+    textBox.Size = size
+    textBox.Position = pos
+    textBox.Text = text
+    textBox.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+    textBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    textBox.BackgroundTransparency = trans
+    textBox.Parent = parent
+    textBox.Visible = visible
+    return textBox
+end
+
+local function createuiCorner(name, parent, radius)
+    local uiCorner = Instance.new("UICorner")
+    uiCorner.Name = name
+    uiCorner.Parent = parent
+    uiCorner.CornerRadius = radius
+    return uiCorner
+end
+
+local function createUIStroke(name, parent, thickness, color)
+    local uiStroke = Instance.new("UIStroke")
+    uiStroke.Name = name
+    uiStroke.Thickness = thickness or 1
+    uiStroke.Color = color or Color3.fromRGB(0, 0, 0)
+    uiStroke.Parent = parent
+    return uiStroke
+end
+
+local function createTween(parent, time, size)
+    local tweenInfo = TweenInfo.new(
+        time,
+        Enum.EasingStyle.Quad, 
+        Enum.EasingDirection.Out, 
+        0,
+        false, 
+        0 
+    )
+
+    local tween = TweenService:Create(parent, tweenInfo, {Size = size})
+    return tween
+end
+
+local function createTweenPos(parent, time, pos)
+    local twninfo = TweenInfo.new(
+        time,
+        Enum.EasingStyle.Quad, 
+        Enum.EasingDirection.Out, 
+        0,
+        false, 
+        0 
+    )
+
+    local twn = TweenService:Create(parent, twninfo, {Position = pos})
+    return twn
+end
+
 function AtaHubLib:CreateWindow(title)
     local gui = Instance.new("ScreenGui")
     gui.Name = title
     gui.Parent = game.CoreGui
 
-    local MainFrame = Instance.new("Frame")
-    MainFrame.Parent = gui
-    MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    MainFrame.Position = UDim2.new(0, 202, 0, -10)
-    MainFrame.Size = UDim2.new(0, 300, 0, 33)
+    local mainFrame = createFrame("mainFrame", gui, UDim2.new(0, 202, 0, -10), UDim2.new(0, 300, 0, 43), true, 0)
 
 
     local TitleBar = Instance.new("TextLabel")
-    TitleBar.Parent = MainFrame
+    TitleBar.Parent = mainFrame
     TitleBar.Size = UDim2.new(0, 180, 0, 20)
     TitleBar.Position = UDim2.new(0, 7, 0, 6)
     TitleBar.Font = Enum.Font.ArimoBold
@@ -27,69 +155,40 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextXAlignment = Enum.TextXAlignment.Left
     TitleBar.TextWrapped = true
 
-    local Button = Instance.new("TextButton")
-    Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 33, 0, 0)
-    Button.Size = UDim2.new(0, 33, 0, 33)
-    Button.Text = ""
-    Button.Parent = MainFrame
-    Button.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-    Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    local Button = createButton("Button", mainFrame, UDim2.new(0, mainFrame.Size.X.Offset - 46, 0, 0), UDim2.new(0, 43, 0, 43), true, "", 0)
+    local Button1 = createButton("Button1", mainFrame, UDim2.new(0, mainFrame.Size.X.Offset - 91, 0, 0), UDim2.new(0, 43, 0, 43), true, "", 0)
 
-    local Button1 = Instance.new("TextButton")
-    Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 67, 0, 0)
-    Button1.Size = UDim2.new(0, 33, 0, 33)
-    Button1.Text = ""
-    Button1.Parent = MainFrame
-    Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-    Button1.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-    local text = Instance.new("TextLabel")
-    text.Parent = Button
-    text.Size = UDim2.new(0, 60, 0, 20)
-    text.Position = UDim2.new(0, -14, 0, 5)
+    local text = createText("Text", Button, UDim2.new(0, -9.5, 0, 10), UDim2.new(0, 60, 0, 20), "x", true, 180)
     text.Font = Enum.Font.ArimoBold
-    text.Text = "x"
-    text.TextColor3 = Color3.fromRGB(255, 255, 255)
     text.TextSize = 23
-    text.BackgroundTransparency = 1
-    
-    local text1 = Instance.new("TextLabel")
-    text1.Parent = Button1
-    text1.Size = UDim2.new(0, 60, 0, 20)
-    text1.Position = UDim2.new(0, -14, 0, 5)
-    text1.Font = Enum.Font.ArimoBold
-    text1.Text = "+"
-    text1.TextColor3 = Color3.fromRGB(255, 255, 255)
-    text1.TextSize = 30
-    text1.BackgroundTransparency = 1
-    
-    
-    local uic = Instance.new("UICorner")
-    uic.Parent = MainFrame
-    uic.CornerRadius = UDim.new(0, 13)
 
-    local uic1 = Instance.new("UICorner")
-    uic1.Parent = Button
-    uic1.CornerRadius = UDim.new(0, 13)
+    local text2 = createText("Text2", Button1, UDim2.new(0, -9.5, 0, 10), UDim2.new(0, 60, 0, 20), "+", true, 0)
+    text2.Font = Enum.Font.ArimoBold
+    text2.TextSize = 23
+    
+local uic = createuiCorner("uic", mainFrame, UDim.new(0, 13))
+local uic1 = createuiCorner("uic1", Button, UDim.new(0, 13))
+local uic2 = createuiCorner("uic2", Button1, UDim.new(0, 13))
+    
+local function one()
+    local mainFrameTween = createTween(mainFrame, 1, UDim2.new(0, 350, 0, 300))
+    mainFrameTween:Play()
+end
 
-    local uic2 = Instance.new("UICorner")
-    uic2.Parent = Button1
-    uic2.CornerRadius = UDim.new(0, 13)
+local function two()
+    local mainFramebackTween = createTween(mainFrame, 1, UDim2.new(0, 300, 0, 43))
+    mainFramebackTween:Play()
+end
     
-    local tween = TweenService:Create(MainFrame, TweenInfo.new(0.5), {Size = UDim2.new(0, 300, 0, 300)})
-    local backtween = TweenService:Create(MainFrame, TweenInfo.new(0.5), {Size = UDim2.new(0, 300, 0, 33)})
-    
-Button.MouseButton1Click:Connect(function()
-    warn("dont copleted")
-end)
+
 local button1Active = false
 Button1.MouseButton1Click:Connect(function()
     if button1Active then
     button1Active = true
-    tween:Play()
+    one:Play()
  else
     button1Active = false
-    backtween:Play()
+    two:Play()
   end
 end)
 
@@ -117,7 +216,7 @@ end)
         Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 67, 0, 0)
     end)
 
-    self.MainFrame = MainFrame
+    self.MainFrame = mainFrame
     self.Tabs = {}
 
     return self
