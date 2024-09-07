@@ -189,7 +189,7 @@ Button1.MouseButton1Click:Connect(function()
     one()
  else
     button1Active = false
-    two:Play()
+    two()
   end
 end)
 
