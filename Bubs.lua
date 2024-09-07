@@ -27,7 +27,6 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextXAlignment = Enum.TextXAlignment.Left
     TitleBar.TextWrapped = true
 
-
     local Button = Instance.new("TextButton")
     Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 46, 0, 0)
     Button.Size = UDim2.new(0, 33, 0, 33)
@@ -44,7 +43,27 @@ function AtaHubLib:CreateWindow(title)
     Button1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Button1.TextColor3 = Color3.fromRGB(255, 255, 255)
 
-
+    local text = Instance.new("TextLabel")
+    text.Parent = Button
+    text.Size = UDim2.new(0, 60, 0, 20)
+    text.Position = UDim2.new(0, -9.5, 0, 10)
+    text.Font = Enum.Font.ArimoBold
+    text.Text = "x"
+    text.TextColor3 = Color3.fromRGB(255, 255, 255)
+    text.TextSize = 23
+    text.BackgroundTransparency = 1
+    
+    local text1 = Instance.new("TextLabel")
+    text1.Parent = Button1
+    text1.Size = UDim2.new(0, 60, 0, 20)
+    text1.Position = UDim2.new(0, -9.5, 0, 10)
+    text1.Font = Enum.Font.ArimoBold
+    text1.Text = "+"
+    text1.TextColor3 = Color3.fromRGB(255, 255, 255)
+    text1.TextSize = 23
+    text1.BackgroundTransparency = 1
+    
+    
     local uic = Instance.new("UICorner")
     uic.Parent = MainFrame
     uic.CornerRadius = UDim.new(0, 13)
