@@ -28,25 +28,25 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextWrapped = true
 
     local Button = Instance.new("TextButton")
-    Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 46, 0, 0)
+    Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 33, 0, 0)
     Button.Size = UDim2.new(0, 33, 0, 33)
     Button.Text = ""
     Button.Parent = MainFrame
-    Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Button.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 
     local Button1 = Instance.new("TextButton")
-    Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 91, 0, 0)
+    Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 67, 0, 0)
     Button1.Size = UDim2.new(0, 33, 0, 33)
     Button1.Text = ""
     Button1.Parent = MainFrame
-    Button1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Button1.TextColor3 = Color3.fromRGB(255, 255, 255)
 
     local text = Instance.new("TextLabel")
     text.Parent = Button
     text.Size = UDim2.new(0, 60, 0, 20)
-    text.Position = UDim2.new(0, -9.5, 0, 10)
+    text.Position = UDim2.new(0, -14, 0, 5)
     text.Font = Enum.Font.ArimoBold
     text.Text = "x"
     text.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -56,11 +56,11 @@ function AtaHubLib:CreateWindow(title)
     local text1 = Instance.new("TextLabel")
     text1.Parent = Button1
     text1.Size = UDim2.new(0, 60, 0, 20)
-    text1.Position = UDim2.new(0, -9.5, 0, 10)
+    text1.Position = UDim2.new(0, -14, 0, 5)
     text1.Font = Enum.Font.ArimoBold
     text1.Text = "+"
     text1.TextColor3 = Color3.fromRGB(255, 255, 255)
-    text1.TextSize = 23
+    text1.TextSize = 30
     text1.BackgroundTransparency = 1
     
     
