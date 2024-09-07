@@ -33,6 +33,7 @@ function AtaHubLib:CreateWindow(title)
     Button.Size = UDim2.new(0, 33, 0, 33)
     Button.Text = ""
     Button.Parent = MainFrame
+    Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Button.TextColor3 = Color3.fromRGB(255, 255, 255)
 
     local Button1 = Instance.new("TextButton")
@@ -40,6 +41,7 @@ function AtaHubLib:CreateWindow(title)
     Button1.Size = UDim2.new(0, 33, 0, 33)
     Button1.Text = ""
     Button1.Parent = MainFrame
+    Button1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Button1.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 
@@ -86,41 +88,6 @@ function AtaHubLib:CreateWindow(title)
     self.Tabs = {}
 
     return self
-end
-
-
-function AtaHubLib:CreateNotification(title, text, duration)
-    local Notification = Instance.new("TextLabel")
-    Notification.Parent = self.MainFrame
-    Notification.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    Notification.Size = UDim2.new(0, 300, 0, 100)
-    Notification.Position = UDim2.new(0.5, -150, 1, -110)
-    Notification.AnchorPoint = Vector2.new(0.5, 1)
-    Notification.Font = Enum.Font.SourceSansBold
-    Notification.Text = title .. "\n" .. text
-    Notification.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Notification.TextSize = 18
-    Notification.TextWrapped = true
-
-    local tween = TweenService:Create(Notification, TweenInfo.new(0.5), {Position = UDim2.new(0.5, -150, 1, -210)})
-local tweenOut = TweenService:Create(Notification, TweenInfo.new(0.5), {Position = UDim2.new(0.5, -150, 1, -110)})
-
-tween.Completed:Connect(function()
-    print("Tween completed!")
-end)
-
-tweenOut.Completed:Connect(function()
-    print("Tween out completed!")
-end)
-    
-    tween:Play()
-    spawn(function()
-        wait(duration)
-        tweenOut:Play()
-        tweenOut.Completed:Connect(function()
-            Notification:Destroy()
-        end)
-    end)
 end
 
 return AtaHubLib
