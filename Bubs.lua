@@ -3,7 +3,7 @@ AtaHubLib.__index = AtaHubLib
 
 local TweenService = game:GetService("TweenService")
 
-function MyHubLib:CreateWindow(title)
+function AtaHubLib:CreateWindow(title)
     local gui = Instance.new("ScreenGui")
     gui.Name = title
     gui.Parent = game.CoreGui
@@ -34,7 +34,7 @@ function MyHubLib:CreateWindow(title)
     return self
 end
 
-function MyHubLib:CreateTab(name)
+function AtaHubLib:CreateTab(name)
     local TabButton = Instance.new("TextButton")
     TabButton.Parent = self.MainFrame
     TabButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -62,7 +62,7 @@ function MyHubLib:CreateTab(name)
     return TabFrame
 end
 
-function MyHubLib:CreateLabel(tab, text)
+function AtaHubLib:CreateLabel(tab, text)
     local Label = Instance.new("TextLabel")
     Label.Parent = tab
     Label.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -75,7 +75,7 @@ function MyHubLib:CreateLabel(tab, text)
     return Label
 end
 
-function MyHubLib:CreateButton(tab, text, callback)
+function AtaHubLib:CreateButton(tab, text, callback)
     local Button = Instance.new("TextButton")
     Button.Parent = tab
     Button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
@@ -89,7 +89,7 @@ function MyHubLib:CreateButton(tab, text, callback)
     return Button
 end
 
-function MyHubLib:CreateToggle(tab, text, default, callback)
+function AtaHubLib:CreateToggle(tab, text, default, callback)
     local Toggle = Instance.new("TextButton")
     Toggle.Parent = tab
     Toggle.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
@@ -109,7 +109,7 @@ function MyHubLib:CreateToggle(tab, text, default, callback)
     return Toggle
 end
 
-function MyHubLib:CreateNotification(title, text, duration)
+function AtaHubLib:CreateNotification(title, text, duration)
     local Notification = Instance.new("TextLabel")
     Notification.Parent = self.MainFrame
     Notification.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -135,4 +135,4 @@ function MyHubLib:CreateNotification(title, text, duration)
     end)
 end
 
-return MyHubLib
+return AtaHubLib
