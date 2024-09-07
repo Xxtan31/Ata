@@ -27,13 +27,13 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextWrapped = true
     
     local Button = Instance.new("TextButton")
-    Button.Position = UDim2.new(0, mainFrame.Size.X.Offset - 46, 0, 0)
+    Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 46, 0, 0)
     Button.Size = UDim2.new(0, 33, 0, 33)
     Button.Text = ""
     Button.Parent = MainFrame
     Button.TextColor3 = Color3.fromRGB(255, 255, 255)
     local Button1 = Instance.new("TextButton")
-    Button1.Position = UDim2.new(0, mainFrame.Size.X.Offset - 91, 0, 0)
+    Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 91, 0, 0)
     Button1.Size = UDim2.new(0, 33, 0, 33)
     Button1.Text = ""
     Button1.Parent = MainFrame
@@ -73,8 +73,8 @@ Button1.MouseEnter:Connect(Button1MouseEnter)
 Button1.MouseLeave:Connect(Button1MouseLeave)
     
     local function updateButtonPositions()
-    Button.Position = UDim2.new(0, mainFrame.Size.X.Offset - 46, 0, 0)
-    Button1.Position = UDim2.new(0, mainFrame.Size.X.Offset - 91, 0, 0)
+    Button.Position = UDim2.new(0, MainFrame.Size.X.Offset - 46, 0, 0)
+    Button1.Position = UDim2.new(0, MainFrame.Size.X.Offset - 91, 0, 0)
 end
 
 game:GetService("RunService").RenderStepped:Connect(updateButtonPositions)
