@@ -173,18 +173,18 @@ local uic1 = createuiCorner("uic1", Button, UDim.new(0, 13))
 local uic2 = createuiCorner("uic2", Button1, UDim.new(0, 13))
 
 local function one()
-    local mainFrameTween = createTween(mainFrame, 1, UDim2.new(0, 350, 0, 300))
-    mainFrameTween:Play()
+    local tween = createTween(mainFrame, 0.5, UDim2.new(0, 350, 0, 300))
+    tween:Play()
 end
 
 local function two()
-    local mainFramebackTween = createTween(mainFrame, 1, UDim2.new(0, 300, 0, 43))
+    local mainFramebackTween = createTween(mainFrame, 0.5, UDim2.new(0, 300, 0, 33))
     mainFramebackTween:Play()
 end 
 
 local button1Active = false
 Button1.MouseButton1Click:Connect(function()
-    if button1Active then
+    if not button1Active then
     button1Active = true
     one()
  else
@@ -201,7 +201,7 @@ end)
     end
     local function Button1MouseEnter()
         Button1.BackgroundColor3 = Color3.fromRGB(51, 255, 255)
-  end
+    end
 
     local function Button1MouseLeave()
         Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
