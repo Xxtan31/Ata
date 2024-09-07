@@ -201,7 +201,7 @@ end)
     end
     local function Button1MouseEnter()
         Button1.BackgroundColor3 = Color3.fromRGB(51, 255, 255)
-    end
+  end
 
     local function Button1MouseLeave()
         Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
