@@ -10,18 +10,16 @@ function MyHubLib:CreateWindow(title)
 
     local MainFrame = Instance.new("Frame")
     MainFrame.Parent = gui
-    MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    MainFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
-    MainFrame.Size = UDim2.new(0, 650, 0, 450)
+    MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    MainFrame.Position = UDim2.new(0, 202, 0, -10)
+    MainFrame.Size = UDim2.new(0, 300, 0, 43)
     MainFrame.ClipsDescendants = true
 
     local TitleBar = Instance.new("TextLabel")
     TitleBar.Parent = MainFrame
-    TitleBar.AnchorPoint = Vector2.new(0.5, 0)
-    TitleBar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    TitleBar.Size = UDim2.new(1, -10, 0, 35)
-    TitleBar.Position = UDim2.new(0.5, 0, 0, -5)
-    TitleBar.Font = Enum.Font.SourceSansBold
+    TitleBar.Size = UDim2.new(0, 120, 0, 20)
+    TitleBar.Position = UDim2.new(0, 5, 0, 10)
+    TitleBar.Font = Enum.Font.ArimoBold
     TitleBar.Text = title
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
     TitleBar.TextSize = 24
