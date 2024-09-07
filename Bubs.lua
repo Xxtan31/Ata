@@ -140,7 +140,7 @@ function AtaHubLib:CreateWindow(title)
     gui.Name = title
     gui.Parent = game.CoreGui
 
-    local mainFrame = createFrame("mainFrame", gui, UDim2.new(0, 202, 0, -10), UDim2.new(0, 300, 0, 43), true, 0)
+    local mainFrame = createFrame("mainFrame", gui, UDim2.new(0, 202, 0, -10), UDim2.new(0, 300, 0, 33), true, 0)
 
 
     local TitleBar = Instance.new("TextLabel")
@@ -155,8 +155,10 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextXAlignment = Enum.TextXAlignment.Left
     TitleBar.TextWrapped = true
 
-    local Button = createButton("Button", mainFrame, UDim2.new(0, mainFrame.Size.X.Offset - 46, 0, 0), UDim2.new(0, 43, 0, 43), true, "", 0)
-    local Button1 = createButton("Button1", mainFrame, UDim2.new(0, mainFrame.Size.X.Offset - 91, 0, 0), UDim2.new(0, 43, 0, 43), true, "", 0)
+    local Button = createButton("Button", mainFrame, UDim2.new(0, mainFrame.Size.X.Offset - 33, 0, 0), UDim2.new(0, 33, 0, 33), true, "", 0)
+Button.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+    local Button1 = createButton("Button1", mainFrame, UDim2.new(0, mainFrame.Size.X.Offset - 67, 0, 0), UDim2.new(0, 33, 0, 33), true, "", 0)
+Button1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 
     local text = createText("Text", Button, UDim2.new(0, -9.5, 0, 10), UDim2.new(0, 60, 0, 20), "x", true, 180)
     text.Font = Enum.Font.ArimoBold
