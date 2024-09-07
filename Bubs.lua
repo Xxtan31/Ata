@@ -26,9 +26,58 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.TextXAlignment = Enum.TextXAlignment.Left
     TitleBar.TextWrapped = true
     
+    local Button = Instance.new("TextButton")
+    Button.Position = UDim2.new(0, mainFrame.Size.X.Offset - 46, 0, 0)
+    Button.Size = UDim2.new(0, 33, 0, 33)
+    Button.Text = ""
+    Button.Parent = MainFrame
+    Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    local Button1 = Instance.new("TextButton")
+    Button1.Position = UDim2.new(0, mainFrame.Size.X.Offset - 91, 0, 0)
+    Button1.Size = UDim2.new(0, 33, 0, 33)
+    Button1.Text = ""
+    Button1.Parent = MainFrame
+    Button1.TextColor3 = Color3.fromRGB(255, 255, 255)
+    
     local uic = Instance.new("UICorner")
     uic.Parent = MainFrame
     uic.CornerRadius = UDim.new(0, 13)
+    local uic1 = Instance.new("UICorner")
+    uic.Parent = Button
+    uic.CornerRadius = UDim.new(0, 13)
+    local uic2 = Instance.new("UICorner")
+    uic.Parent = Button1
+    uic.CornerRadius = UDim.new(0, 13)
+    
+    
+    local function ButtonMouseEnter()
+    Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end
+
+local function ButtonMouseLeave()
+    Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+end
+
+Button.MouseEnter:Connect(ButtonMouseEnter)
+Button.MouseLeave:Connect(ButtonMouseLeave)
+
+local function Button1MouseEnter()
+    Button1.BackgroundColor3 = Color3.fromRGB(51, 255, 255)
+end
+
+local function Button1MouseLeave()
+    Button1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+end
+
+Button1.MouseEnter:Connect(Button1MouseEnter)
+Button1.MouseLeave:Connect(Button1MouseLeave)
+    
+    local function updateButtonPositions()
+    Button.Position = UDim2.new(0, mainFrame.Size.X.Offset - 46, 0, 0)
+    Button1.Position = UDim2.new(0, mainFrame.Size.X.Offset - 91, 0, 0)
+end
+
+game:GetService("RunService").RenderStepped:Connect(updateButtonPositions)
 
     self.MainFrame = MainFrame
     self.Tabs = {}
