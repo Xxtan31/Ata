@@ -18,7 +18,7 @@ function AtaHubLib:CreateWindow(title)
     TitleBar.Parent = MainFrame
     TitleBar.Size = UDim2.new(0, 120, 0, 20)
     TitleBar.Position = UDim2.new(0, 5, 0, 10)
-    TitleBar.Font = Enum.Font.Arimo
+    TitleBar.Font = Enum.Font.ArimoBold
     TitleBar.Text = title
     TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
     
